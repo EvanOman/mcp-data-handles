@@ -1,10 +1,12 @@
+"""
+This module contains a simple MCP server that exposes several basic DataFrame operations along with a mock query_database tool to simulate a database.
+"""
+
 import pandas as pd
 import uuid
 from typing import Dict
 
-# Requires mcp >= 1.2.0 and pandas
 from mcp.server.fastmcp import FastMCP
-import mcp.types as T
 
 # --- In-memory storage for our demo ---
 # Simulate a database with a couple of tables
@@ -27,7 +29,7 @@ data_handles: Dict[str, pd.DataFrame] = {}
 
 # --- MCP Server Setup ---
 handler_mcp = FastMCP(
-    "df-handler-demo",
+    "df-abstractions-handler-demo",
     # You can add server info and capabilities here if needed
     # server_info=T.Implementation(version="1.0.0"),
     # server_options=T.ServerOptions(capabilities=T.ServerCapabilities(...))
