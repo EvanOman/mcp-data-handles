@@ -2,12 +2,12 @@
 This module contains a simple MCP server that gives a model the ability to run generic pandas DataFrame operations, along with a mock query_database tool to simulate a database.
 """
 
-import pandas as pd
-import uuid
-from typing import Dict, Any, List
 import io
 import traceback
+import uuid
+from typing import Any, Dict, List
 
+import pandas as pd
 from mcp.server.fastmcp import FastMCP
 
 # --- Security Warning ---

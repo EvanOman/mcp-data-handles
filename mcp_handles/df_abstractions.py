@@ -2,10 +2,10 @@
 This module contains a simple MCP server that exposes several basic DataFrame operations along with a mock query_database tool to simulate a database.
 """
 
-import pandas as pd
 import uuid
 from typing import Dict
 
+import pandas as pd
 from mcp.server.fastmcp import FastMCP
 
 # --- In-memory storage for our demo ---
@@ -30,9 +30,6 @@ data_handles: Dict[str, pd.DataFrame] = {}
 # --- MCP Server Setup ---
 handler_mcp = FastMCP(
     "df-abstractions-handler-demo",
-    # You can add server info and capabilities here if needed
-    # server_info=T.Implementation(version="1.0.0"),
-    # server_options=T.ServerOptions(capabilities=T.ServerCapabilities(...))
 )
 
 print("DataFrame Handler Server starting...")
@@ -214,7 +211,7 @@ def get_top_n_rows(handle: str, n: int) -> str:
     if handle not in data_handles:
         return f"Error: Handle '{handle}' not found."
     if not isinstance(n, int) or n <= 0:
-        return f"Error: Number of rows 'n' must be a positive integer."
+        return f"Error: Number of rows {n} must be a positive integer."
 
     # Optional: Add a safety cap to prevent asking for too many rows
     MAX_ROWS = 1000
