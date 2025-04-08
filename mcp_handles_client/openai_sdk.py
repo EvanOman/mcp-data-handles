@@ -1,11 +1,10 @@
 import asyncio
 import os
-import shutil
 
-from agents import Agent, Runner, gen_trace_id, trace
+from agents import Agent, Runner
 from agents.mcp import MCPServer, MCPServerStdio
-
 from fire import Fire
+
 
 async def run(mcp_server: MCPServer, query: str):
     agent = Agent(

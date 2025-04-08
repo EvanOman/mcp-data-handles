@@ -140,6 +140,14 @@ You can also add these to Claude Desktop with the following configuration:
 
 ![Claude Calling Handles](./img/claude-calls-abstract.png)
 
+### OpenAI Agents SDK
+
+To use the OpenAI agents sdk client, run the following:
+
+```sh
+uv run -m mcp_handles_client.openai_sdk "<query>"
+```
+
 ## Security Note
 
 The Generic Pandas API uses `exec()` to run arbitrary Python code. This is extremely dangerous and should NOT be used in production without proper sandboxing and security reviews. The DataFrame Abstractions API is much safer as it only exposes specific, controlled operations.
