@@ -5,8 +5,10 @@ description = "Demo of working with data using handles in MCP"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "dotenv>=0.9.9",
     "fire>=0.7.0",
     "mcp[cli]>=1.6.0",
+    "notebook>=7.3.3",
     "openai-agents>=0.0.9",
     "pandas>=2.2.3",
 ]
